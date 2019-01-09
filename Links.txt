@@ -1,0 +1,63 @@
+First Robotics Competition Programming Information
+
+-- LINKS FOR 2019 --
+
+FRC 2019 Control System
+    All details for programming with any supported language.
+    https://wpilib.screenstepslive.com/s/4485
+
+FRC Java Programming
+    Information and resources for FRC Java programming.
+    https://wpilib.screenstepslive.com/s/currentCS/m/java
+
+WPI Lib API - Java
+    Primary API for programming RoboRio
+    http://first.wpi.edu/FRC/roborio/release/docs/java/
+    
+WPI Lib Installers
+    https://github.com/wpilibsuite/allwpilib/releases
+    Current version application acts as a single installer for Windows.
+    Installs and configures IDE (Visual Studio Code), Java, and wpilib.
+    Also installs FRC tools Robotbuilder, SmartDashboard and others.
+    https://github.com/wpilibsuite/allwpilib/releases/download/v2019.1.1/WPILibInstaller_Windows64-2019.1.1.zip
+
+Robotbuilder
+    Robotbuilder Extensions
+    https://github.com/Beachbot330/RobotBuilderExtensions
+
+Talon SRX Software Documentation
+    Talon SRX will be used for the Drive Train and possibly other subsystems.
+    They will be used in CAN mode with encoders.
+    https://phoenix-documentation.readthedocs.io/en/latest/index.html
+    WPI API
+    http://www.ctr-electronics.com/downloads/api/wpiapi-java/index.html
+
+FRC Programming Done Right
+    Best practices for programming FRC.
+    https://frc-pdr.readthedocs.io/en/latest/
+    
+Introduction to Java
+    https://www.tutorialspoint.com/java/index.htm
+    
+Learn Java Basics
+    https://www.codecademy.com/learn/learn-java
+    
+Chief Delphi
+    Primary developers forum for FRC.
+    https://www.chiefdelphi.com/
+    
+Github site for FRC2515
+    Git code repositories. Git is used for code revision management.
+    https://github.com/frc2515
+    
+Fork Git Client
+    User friendly and fully capable multiplatform git client.
+    https://git-fork.com/
+    
+Git Tutorial
+    For command line, but the concepts 100% applicable.
+    https://git-scm.com/docs/gittutorial
+    
+    https://www.tutorialspoint.com/git/index.htm
+    
+-- END 2019 --
