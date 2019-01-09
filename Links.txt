@@ -29,6 +29,8 @@ Talon SRX Software Documentation
     Talon SRX will be used for the Drive Train and possibly other subsystems.
     They will be used in CAN mode with encoders.
     https://phoenix-documentation.readthedocs.io/en/latest/index.html
+    WPI API
+    http://www.ctr-electronics.com/downloads/api/wpiapi-java/index.html
 
 FRC Programming Done Right
     Best practices for programming FRC.
