@@ -6,7 +6,7 @@ Code base for 2019 FRC Team 2515 robot build.
 
 Use instructions located on FRC website.
 
-[2019 Control System - Java] https://wpilib.screenstepslive.com/s/currentCS/m/java/l/1027503-installing-c-and-java-development-tools-for-frc
+[2019 Control System - Java](https://wpilib.screenstepslive.com/s/currentCS/m/java/l/1027503-installing-c-and-java-development-tools-for-frc)
 
 ## Dev Environment Setup
 Copy gitignore.example to .gitignore
