@@ -18,8 +18,12 @@ WPI Lib Installers
     https://github.com/wpilibsuite/allwpilib/releases
     Current version application acts as a single installer for Windows.
     Installs and configures IDE (Visual Studio Code), Java, and wpilib.
-    Also installs FRC tools Robotbuiler, SmartDashboard and others.
+    Also installs FRC tools Robotbuilder, SmartDashboard and others.
     https://github.com/wpilibsuite/allwpilib/releases/download/v2019.1.1/WPILibInstaller_Windows64-2019.1.1.zip
+
+Robotbuilder
+    Robotbuilder Extensions
+    https://github.com/Beachbot330/RobotBuilderExtensions
 
 Talon SRX Software Documentation
     Talon SRX will be used for the Drive Train and possibly other subsystems.
