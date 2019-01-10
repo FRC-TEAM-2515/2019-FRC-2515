@@ -1,0 +1,16 @@
+<xml version="1.0">
+<dashboard>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.RobotPreferences">
+		<location x="0" y="436"/>
+		<width>608</width>
+		<height>241</height>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.MjpgStreamViewerImpl">
+		<location x="0" y="1"/>
+		<width>609</width>
+		<height>434</height>
+	</static-widget>
+</dashboard>
+<live-window>
+</live-window>
+</xml>
