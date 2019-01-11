@@ -1,0 +1,37 @@
+ENIGMA BRAINSTORMING
+
+SUBSYSTEMS
+    Drive   aka (DriveTrain)
+    Intake  aka (Grabber, Claw)
+    Lift    aka (Arm, Elevator)
+    Climb   aka (Grappler)
+
+SENSORS
+    Pressure        for Intake
+    Photo/Color     for Drive
+    Sonar           for Drive, Intake
+    Gyro            for Drive           (NavX)
+    Vision          for Drive, Intake
+
+COMMANDS
+    grabHatchPanel
+    releaseHatchPanel
+    grabCargo
+    releaseCargo
+    liftUp
+    liftDown
+    climbUp
+    engageAutoPilot
+    disengageAutoPilot
+    enableAutoPilot
+    disableAutoPilot
+    emergencyReset      Stop all SUBSYSTEMS, reset all SENSORS, disengageAutoPilot, 
+                        Check System, Reset VARIABLES, Start Over
+
+GLOBAL VARIABLES
+    Boolean     isAutoPilotEnabled        Autopilot will operate when engaged. 
+                                        Allows for completely disabling Auto Pilot.
+    Boolean     isAutoPilotEngaged        Autopilot is operating.
+    Boolean     isCargoLoaded
+    Boolean     isHatchPanelLoaded
+    
