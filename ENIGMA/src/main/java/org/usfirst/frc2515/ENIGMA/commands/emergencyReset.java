@@ -37,6 +37,7 @@ public class emergencyReset extends InstantCommand {
     // Called once when this command runs
     @Override
     protected void initialize() {
+        Robot.driveTrain .stop();
     }
 
 }
