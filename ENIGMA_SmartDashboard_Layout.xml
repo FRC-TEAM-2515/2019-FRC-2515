@@ -1,5 +1,8 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="Auto Selector" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="610" y="0"/>
+	</widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.RobotPreferences">
 		<location x="0" y="436"/>
 		<width>608</width>
@@ -10,7 +13,31 @@
 		<width>609</width>
 		<height>434</height>
 	</static-widget>
+	<widget field="Autonomous Command" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="15" y="7"/>
+	</widget>
+	<widget field="disableAutoPilot" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="29" y="0"/>
+	</widget>
+	<widget field="overrideAutoPilot" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="11" y="28"/>
+	</widget>
+	<widget field="Auto mode" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="25" y="27"/>
+	</widget>
+	<widget field="Auto Pilot Enabled" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="24" y="17"/>
+	</widget>
+	<widget field="Auto Pilot Engaged" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="23" y="17"/>
+	</widget>
 </dashboard>
 <live-window>
+	<widget field="Ungrouped" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="21" y="32"/>
+	</widget>
+	<widget field="driveTrain" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="22" y="8"/>
+	</widget>
 </live-window>
 </xml>
