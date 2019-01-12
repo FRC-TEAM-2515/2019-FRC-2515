@@ -109,10 +109,10 @@ public class driveTrain extends Subsystem {
         }
         SmartDashboard.putNumber("Left Drive Encoder", leftDriveTalon.getSelectedSensorPosition());
         SmartDashboard.putNumber("Right Drive Encoder", rightDriveTalon.getSelectedSensorPosition());
-        if(Robot.isAutoPilotEngaged = true){
+        if(Robot.isAutoPilotEngaged == true){
             // autoPilot Drive Code Goes Here
         }else{
-            diffDrive.arcadeDrive(forward, turn);
+            diffDrive.arcadeDrive(forward*Robot.accelerateMultiplier, turn*Robot.accelerateMultiplier);
         }
     }
 

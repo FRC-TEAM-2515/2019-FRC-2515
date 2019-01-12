@@ -38,7 +38,9 @@ public class engageAutoPilot extends InstantCommand {
     // Called once when this command runs
     @Override
     protected void initialize() {
-        Robot.isAutoPilotEngaged = true;
+        if(Robot.isAutoPilotEnabled == true){
+            Robot.isAutoPilotEngaged = true;
+        }
     }
 
 }

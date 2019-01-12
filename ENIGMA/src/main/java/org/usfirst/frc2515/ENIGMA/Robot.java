@@ -42,6 +42,7 @@ public class Robot extends TimedRobot {
     public static boolean isAutoPilotEngaged;
     public static boolean isCargoLoaded;
     public static boolean isHatchPanelLoaded;
+    public static double accelerateMultiplier;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -124,6 +125,9 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        accelerateMultiplier = (Robot.oi.driverStick.getRawAxis(3) + 3)*.25;
+        SmartDashboard.putNumber("Accelerate Multiplier", accelerateMultiplier);
+        SmartDashboard.putNumber("Raw Drag", Robot.oi.driverStick.getRawAxis(3));
         SmartDashboard.putBoolean("Auto Pilot Enabled", isAutoPilotEnabled);
         SmartDashboard.putBoolean("Auto Pilot Engaged", isAutoPilotEngaged);
         SmartDashboard.putBoolean("Cargo Loaded", isCargoLoaded);

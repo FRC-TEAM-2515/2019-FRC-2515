@@ -326,6 +326,17 @@
               "imageWidth": 320,
               "imageHeight": 240
             }
+          },
+          "7,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Auto Selector",
+              "_title": "Auto Selector"
+            }
           }
         }
       }
@@ -376,13 +387,13 @@
                 {
                   "_type": "Speed Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/Talon SRX [4]",
-                  "_title": "LiveWindow/Ungrouped/Talon SRX [4]",
+                  "_title": "/LiveWindow/Ungrouped/Talon SRX [4]",
                   "Visuals/Orientation": "HORIZONTAL"
                 },
                 {
                   "_type": "Speed Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/Talon SRX [3]",
-                  "_title": "LiveWindow/Ungrouped/Talon SRX [3]",
+                  "_title": "/LiveWindow/Ungrouped/Talon SRX [3]",
                   "Visuals/Orientation": "HORIZONTAL"
                 }
               ]
