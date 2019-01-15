@@ -144,6 +144,18 @@ Children:
           value: '1'
       Base: Digital Input
       Name: leftLineSensor
+    - Children: []
+      Properties:
+        UpdateRate: !!robotbuilder.data.properties.IntegerProperty {default: 50, name: UpdateRate,
+          validators: null, value: 50}
+        Port: !!robotbuilder.data.properties.ChoicesProperty
+          choices: [SPI]
+          default: SPI
+          name: Port
+          validators: null
+          value: SPI
+      Base: NavX
+      Name: NavX
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Send to SmartDashboard, validators: null, value: true}
