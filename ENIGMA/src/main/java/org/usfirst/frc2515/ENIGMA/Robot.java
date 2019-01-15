@@ -46,7 +46,7 @@ public class Robot extends TimedRobot {
     public static boolean isCargoLoaded;
     public static boolean isHatchPanelLoaded;
     public static double accelerateMultiplier;
-    public static int lineDetectedTimer;
+    public static int secondsBeforeAutoEngaged;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -68,7 +68,7 @@ public class Robot extends TimedRobot {
         isAutoPilotEngaged = false;
         isCargoLoaded = false;
         isHatchPanelLoaded = false;
-        lineDetectedTimer = 0;
+        secondsBeforeAutoEngaged = 5;
         // OI must be constructed after subsystems. If the OI creates Commands
         //(which it very likely will), subsystems are not guaranteed to be
         // constructed yet. Thus, their requires() statements may grab null
@@ -140,20 +140,18 @@ public class Robot extends TimedRobot {
         SmartDashboard.putBoolean("Auto Pilot Engaged", isAutoPilotEngaged);
         SmartDashboard.putBoolean("Cargo Loaded", isCargoLoaded);
         SmartDashboard.putBoolean("Panel Loaded", isHatchPanelLoaded);
-        SmartDashboard.putBoolean("Line Detected",Robot.sensors.isLineDetected());
-        SmartDashboard.putNumber("Line Timer", lineDetectedTimer);
+        // SmartDashboard.putBoolean("Line Detected",Robot.sensors.isLineDetected());
+        // SmartDashboard.putNumber("Line Timer", lineDetectedTimer);
         if(Robot.sensors.isLineDetected()){
-            while(Robot.sensors.isLineDetected() && lineDetectedTimer < 1000001){
-                lineDetectedTimer++;
-                SmartDashboard.putNumber("Line Timer", lineDetectedTimer);
-                if(lineDetectedTimer == 1000000){
-                    Robot.isAutoPilotEngaged = true;
-                }
+            SmartDashboard.putNumber("Line Timer", Robot.sensors.lineDetectionTimer.get());
+            if(Robot.sensors.lineDetectionTimer.hasPeriodPassed(secondsBeforeAutoEngaged)){
+                Robot.isAutoPilotEngaged = true;
             }
-        } else {
-            lineDetectedTimer = 0;
-            SmartDashboard.putNumber("Line Timer", lineDetectedTimer);
         }
-        Robot.driveTrain.drive();
+        if(Robot.isAutoPilotEnabled && Robot.isAutoPilotEngaged) {
+            Robot.driveTrain.autoDrive();
+        } else {
+            Robot.driveTrain.drive();
+        }
     }
 }
