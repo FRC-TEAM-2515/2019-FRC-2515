@@ -97,7 +97,7 @@ public class driveTrain extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-    public void drive(){
+    public void operatorDrive(){
         double forward = -1 * Robot.oi.driverStick.getRawAxis(1); /* positive is forward */
         double turn = +1 * Robot.oi.driverStick.getRawAxis(2); /* positive is right */
         /* deadband gamepad 10% */
@@ -111,15 +111,25 @@ public class driveTrain extends Subsystem {
         SmartDashboard.putNumber("Right Drive Encoder", rightDriveTalon.getSelectedSensorPosition());
         diffDrive.arcadeDrive(forward*Robot.accelerateMultiplier, turn*Robot.accelerateMultiplier);
     }
-    public void autoDrive(){
-        diffDrive.arcadeDrive(.25, 0);
-    }
-    public void autoDriveStraight(){
-        diffDrive.arcadeDrive(.25, 0);
-    }
-    public void autoDriveTurn(){
 
+    public void autoDriveStraight(){
+        diffDrive.arcadeDrive(.5, 0);
     }
+
+    public void autoDriveTurn(){
+        // double turn;
+        // rightDriveTalon.setSelectedSensorPosition(0, 1, 0);
+        // leftDriveTalon.setSelectedSensorPosition(0, 1, 0);
+        // turn = rightDriveTalon.getSelectedSensorPosition(1) - leftDriveTalon.getSelectedSensorPosition(1);
+        // if (turn > 1){
+        //     turn = 0.1;
+        // }
+        // if (turn < 0) {
+        //     turn = -0.1;
+        // }
+        // diffDrive.arcadeDrive(.5, turn);
+    }
+    
     public void stop(){
         diffDrive.stopMotor();
     }

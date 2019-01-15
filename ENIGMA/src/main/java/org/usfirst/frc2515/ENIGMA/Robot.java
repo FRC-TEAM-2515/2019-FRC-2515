@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.*;
+
 import org.usfirst.frc2515.ENIGMA.commands.*;
 import org.usfirst.frc2515.ENIGMA.subsystems.*;
 import edu.wpi.first.wpilibj.Timer;
@@ -46,7 +47,7 @@ public class Robot extends TimedRobot {
     public static boolean isCargoLoaded;
     public static boolean isHatchPanelLoaded;
     public static double accelerateMultiplier;
-    public static int secondsBeforeAutoEngaged;
+    public static double secondsBeforeAutoEngaged;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -68,7 +69,8 @@ public class Robot extends TimedRobot {
         isAutoPilotEngaged = false;
         isCargoLoaded = false;
         isHatchPanelLoaded = false;
-        secondsBeforeAutoEngaged = 5;
+        secondsBeforeAutoEngaged = 1.0;
+
         // OI must be constructed after subsystems. If the OI creates Commands
         //(which it very likely will), subsystems are not guaranteed to be
         // constructed yet. Thus, their requires() statements may grab null
@@ -108,6 +110,7 @@ public class Robot extends TimedRobot {
         autonomousCommand = chooser.getSelected();
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
+
     }
 
     /**
@@ -125,6 +128,7 @@ public class Robot extends TimedRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
+        Robot.sensors.lineDetectionTimer.start();
     }
 
     /**
@@ -142,16 +146,18 @@ public class Robot extends TimedRobot {
         SmartDashboard.putBoolean("Panel Loaded", isHatchPanelLoaded);
         // SmartDashboard.putBoolean("Line Detected",Robot.sensors.isLineDetected());
         // SmartDashboard.putNumber("Line Timer", lineDetectedTimer);
-        if(Robot.sensors.isLineDetected()){
-            SmartDashboard.putNumber("Line Timer", Robot.sensors.lineDetectionTimer.get());
-            if(Robot.sensors.lineDetectionTimer.hasPeriodPassed(secondsBeforeAutoEngaged)){
-                Robot.isAutoPilotEngaged = true;
+        if(Robot.sensors.isLineDetected() && isAutoPilotEnabled){
+            if(Robot.sensors.lineDetectionTimer.get() - Robot.sensors.lineDetectedStart >= secondsBeforeAutoEngaged){
+                new engageAutoPilot();
             }
-        }
-        if(Robot.isAutoPilotEnabled && Robot.isAutoPilotEngaged) {
-            Robot.driveTrain.autoDrive();
         } else {
-            Robot.driveTrain.drive();
+            Robot.sensors.lineDetectedStart = 0.0;
+            new disengageAutoPilot();
+        }
+        if(Robot.isAutoPilotEngaged && Robot.sensors.isLineDetected()) {
+            Robot.driveTrain.autoDriveStraight();
+        } else {
+            Robot.driveTrain.operatorDrive();
         }
     }
 }
