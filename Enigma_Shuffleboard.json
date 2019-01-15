@@ -154,39 +154,6 @@
               "Colors/Color when false": "#8B0000FF"
             }
           },
-          "8,3": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/DB/String 0",
-              "_title": "DB/String 0"
-            }
-          },
-          "7,3": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/DB/String 1",
-              "_title": "DB/String 1"
-            }
-          },
-          "6,2": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/DB/String 4",
-              "_title": "DB/String 4"
-            }
-          },
           "5,2": {
             "size": [
               1,
@@ -286,7 +253,7 @@
               "_title": "Left Drive Encoder"
             }
           },
-          "6,3": {
+          "6,2": {
             "size": [
               1,
               1
@@ -334,8 +301,43 @@
             ],
             "content": {
               "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/Auto Selector",
-              "_title": "Auto Selector"
+              "_source0": "network_table:///SmartDashboard/Accelerate Multiplier",
+              "_title": "Accelerate Multiplier"
+            }
+          },
+          "6,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///SmartDashboard/Line Detected",
+              "_title": "/SmartDashboard/Line Detected",
+              "Colors/Color when true": "#7CFC00FF",
+              "Colors/Color when false": "#8B0000FF"
+            }
+          },
+          "8,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/DB/String 6",
+              "_title": "DB/String 6"
+            }
+          },
+          "7,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Line Timer",
+              "_title": "Line Timer"
             }
           }
         }
@@ -387,13 +389,13 @@
                 {
                   "_type": "Speed Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/Talon SRX [4]",
-                  "_title": "/LiveWindow/Ungrouped/Talon SRX [4]",
+                  "_title": "Talon SRX [4]",
                   "Visuals/Orientation": "HORIZONTAL"
                 },
                 {
                   "_type": "Speed Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/Talon SRX [3]",
-                  "_title": "/LiveWindow/Ungrouped/Talon SRX [3]",
+                  "_title": "Talon SRX [3]",
                   "Visuals/Orientation": "HORIZONTAL"
                 }
               ]
@@ -423,6 +425,32 @@
               "_title": "lift",
               "Layout/Label position": "BOTTOM",
               "_children": []
+            }
+          },
+          "8,0": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///LiveWindow/sensors/leftLineSensor/Value",
+              "_title": "sensors/leftLineSensor/Value",
+              "Colors/Color when true": "#7CFC00FF",
+              "Colors/Color when false": "#8B0000FF"
+            }
+          },
+          "8,1": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///LiveWindow/sensors/rightLineSensor/Value",
+              "_title": "sensors/rightLineSensor/Value",
+              "Colors/Color when true": "#7CFC00FF",
+              "Colors/Color when false": "#8B0000FF"
             }
           }
         }
