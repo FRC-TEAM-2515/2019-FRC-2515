@@ -47,7 +47,7 @@ public class Robot extends TimedRobot {
     public static boolean isCargoLoaded;
     public static boolean isHatchPanelLoaded;
     public static double accelerateMultiplier;
-    public static double secondsBeforeAutoEngaged;
+
 
     /**
      * This function is run when the robot is first started up and should be
@@ -69,7 +69,7 @@ public class Robot extends TimedRobot {
         isAutoPilotEngaged = false;
         isCargoLoaded = false;
         isHatchPanelLoaded = false;
-        secondsBeforeAutoEngaged = 1.0;
+
 
         // OI must be constructed after subsystems. If the OI creates Commands
         //(which it very likely will), subsystems are not guaranteed to be
@@ -128,7 +128,6 @@ public class Robot extends TimedRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
-        Robot.sensors.lineDetectionTimer.start();
     }
 
     /**
@@ -144,19 +143,12 @@ public class Robot extends TimedRobot {
         SmartDashboard.putBoolean("Auto Pilot Engaged", isAutoPilotEngaged);
         SmartDashboard.putBoolean("Cargo Loaded", isCargoLoaded);
         SmartDashboard.putBoolean("Panel Loaded", isHatchPanelLoaded);
-        // SmartDashboard.putBoolean("Line Detected",Robot.sensors.isLineDetected());
-        // SmartDashboard.putNumber("Line Timer", lineDetectedTimer);
-        if(Robot.sensors.isLineDetected() && isAutoPilotEnabled){
-            if(Robot.sensors.lineDetectionTimer.get() - Robot.sensors.lineDetectedStart >= secondsBeforeAutoEngaged){
-                new engageAutoPilot();
-            }
-        } else {
-            Robot.sensors.lineDetectedStart = 0.0;
-            new disengageAutoPilot();
-        }
-        if(Robot.isAutoPilotEngaged && Robot.sensors.isLineDetected()) {
+
+        if(Robot.sensors.shouldAutoPilotEngage()){
+            isAutoPilotEngaged = true;
             Robot.driveTrain.autoDriveStraight();
         } else {
+            isAutoPilotEngaged = false;
             Robot.driveTrain.operatorDrive();
         }
     }

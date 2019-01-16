@@ -37,6 +37,7 @@ public class disengageAutoPilot extends InstantCommand {
     // Called once when this command runs
     @Override
     protected void initialize() {
+        Robot.sensors.delayAutoPilot = 5.0;
         Robot.isAutoPilotEngaged = false;
     }
 
