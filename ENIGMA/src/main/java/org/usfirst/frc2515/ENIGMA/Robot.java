@@ -143,12 +143,10 @@ public class Robot extends TimedRobot {
         SmartDashboard.putBoolean("Auto Pilot Engaged", isAutoPilotEngaged);
         SmartDashboard.putBoolean("Cargo Loaded", isCargoLoaded);
         SmartDashboard.putBoolean("Panel Loaded", isHatchPanelLoaded);
-
-        if(Robot.sensors.shouldAutoPilotEngage()){
-            isAutoPilotEngaged = true;
+        
+        if(isAutoPilotEngaged){
             Robot.driveTrain.autoDriveStraight();
         } else {
-            isAutoPilotEngaged = false;
             Robot.driveTrain.operatorDrive();
         }
     }
