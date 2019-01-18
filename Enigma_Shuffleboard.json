@@ -10,17 +10,6 @@
         "hgap": 16.0,
         "vgap": 16.0,
         "tiles": {
-          "0,1": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/disableAutoPilot",
-              "_title": "Disable"
-            }
-          },
           "5,0": {
             "size": [
               1,
@@ -141,19 +130,6 @@
               "Colors/Color when false": "#8B0000FF"
             }
           },
-          "0,0": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Boolean Box",
-              "_source0": "network_table:///SmartDashboard/Auto Pilot Enabled",
-              "_title": "Auto Enabled",
-              "Colors/Color when true": "#7CFC00FF",
-              "Colors/Color when false": "#8B0000FF"
-            }
-          },
           "5,2": {
             "size": [
               1,
@@ -165,18 +141,7 @@
               "_title": "DB/String 8"
             }
           },
-          "1,2": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/engageAutoPilot",
-              "_title": "Engage"
-            }
-          },
-          "8,2": {
+          "2,4": {
             "size": [
               1,
               1
@@ -187,7 +152,7 @@
               "_title": "grabCargo"
             }
           },
-          "0,3": {
+          "1,4": {
             "size": [
               1,
               1
@@ -198,7 +163,7 @@
               "_title": "grabHatchPanel"
             }
           },
-          "1,3": {
+          "0,3": {
             "size": [
               1,
               1
@@ -218,17 +183,6 @@
               "_type": "Command",
               "_source0": "network_table:///SmartDashboard/releaseCargo",
               "_title": "releaseCargo"
-            }
-          },
-          "1,1": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/disengageAutoPilot",
-              "_title": "Disengage"
             }
           },
           "4,3": {
@@ -253,7 +207,7 @@
               "_title": "Left Drive Encoder"
             }
           },
-          "6,2": {
+          "1,3": {
             "size": [
               1,
               1
@@ -262,17 +216,6 @@
               "_type": "Command",
               "_source0": "network_table:///SmartDashboard/releaseHatchPanel",
               "_title": "releaseHatchPanel"
-            }
-          },
-          "0,2": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/enableAutoPilot",
-              "_title": "Enable"
             }
           },
           "2,0": {
@@ -294,7 +237,7 @@
               "imageHeight": 240
             }
           },
-          "7,2": {
+          "7,3": {
             "size": [
               1,
               1
@@ -305,7 +248,7 @@
               "_title": "Accelerate Multiplier"
             }
           },
-          "6,3": {
+          "1,1": {
             "size": [
               1,
               1
@@ -329,7 +272,7 @@
               "_title": "DB/String 6"
             }
           },
-          "7,3": {
+          "6,3": {
             "size": [
               1,
               1
@@ -458,9 +401,9 @@
     }
   ],
   "windowGeometry": {
-    "x": -8.0,
-    "y": -8.0,
-    "width": 1382.0,
-    "height": 744.0
+    "x": 0.0,
+    "y": 23.0,
+    "width": 640.0,
+    "height": 505.0
   }
 }
