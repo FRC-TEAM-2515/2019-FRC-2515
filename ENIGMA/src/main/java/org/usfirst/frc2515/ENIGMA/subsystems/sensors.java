@@ -119,6 +119,34 @@ public class sensors extends Subsystem {
 
         return false;
     }
-
+    public double traceLine(){
+        Double turn;
+        turn = 0.0;
+        // int line[];
+        // line = new int[2];
+        // line[0] = leftLineSensor.get() ? 1 : 0;
+        // line[1] = rightLineSensor.get() ? 1 : 0;
+        String line;
+        
+        line = Integer.toString(leftLineSensor.get() ? 1 : 0);
+        line = line.concat(Integer.toString(rightLineSensor.get() ? 1: 0));
+        SmartDashboard.putString("Line", line);
+        switch(line){
+            case "10":
+                turn = .20;
+                // robot needs slight right turn
+            case "01":
+                turn = -.20;
+                // robot needs slight left turn
+            case "11":
+                turn = 0.0;
+                // robot is straight
+            case "00":
+                turn = 0.0;
+                Robot.isAutoPilotEngaged = false;
+        }
+        SmartDashboard.putNumber("Turn", turn);
+        return turn;
+    }
 }
 

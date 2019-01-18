@@ -116,18 +116,8 @@ public class driveTrain extends Subsystem {
         diffDrive.arcadeDrive(.5, 0);
     }
 
-    public void autoDriveTurn(){
-        // double turn;
-        // rightDriveTalon.setSelectedSensorPosition(0, 1, 0);
-        // leftDriveTalon.setSelectedSensorPosition(0, 1, 0);
-        // turn = rightDriveTalon.getSelectedSensorPosition(1) - leftDriveTalon.getSelectedSensorPosition(1);
-        // if (turn > 1){
-        //     turn = 0.1;
-        // }
-        // if (turn < 0) {
-        //     turn = -0.1;
-        // }
-        // diffDrive.arcadeDrive(.5, turn);
+    public void autoFollowLine(){
+        diffDrive.arcadeDrive(.5, Robot.sensors.traceLine());
     }
     
     public void stop(){

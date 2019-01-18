@@ -139,13 +139,14 @@ public class Robot extends TimedRobot {
         accelerateMultiplier = (Robot.oi.driverStick.getRawAxis(3) + 3)*.25;
         SmartDashboard.putNumber("Accelerate Multiplier", accelerateMultiplier);
         SmartDashboard.putNumber("Raw Drag", Robot.oi.driverStick.getRawAxis(3));
-        SmartDashboard.putBoolean("Auto Pilot Enabled", isAutoPilotDisabled);
+        SmartDashboard.putBoolean("Auto Pilot Disabled", isAutoPilotDisabled);
         SmartDashboard.putBoolean("Auto Pilot Engaged", isAutoPilotEngaged);
         SmartDashboard.putBoolean("Cargo Loaded", isCargoLoaded);
         SmartDashboard.putBoolean("Panel Loaded", isHatchPanelLoaded);
         
         if(!isAutoPilotDisabled && isAutoPilotEngaged){
-            Robot.driveTrain.autoDriveStraight();
+            // Robot.driveTrain.autoDriveStraight();
+            Robot.driveTrain.autoFollowLine();
         } else {
             Robot.driveTrain.operatorDrive();
         }
