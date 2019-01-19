@@ -164,6 +164,18 @@ Children:
           value: '0'
       Base: Analog Input
       Name: analogDistanceSensor
+    - Children: []
+      Properties:
+        UpdateRate: !!robotbuilder.data.properties.IntegerProperty {default: 50, name: UpdateRate,
+          validators: null, value: 50}
+        Port: !!robotbuilder.data.properties.ChoicesProperty
+          choices: [SPI]
+          default: SPI
+          name: Port
+          validators: null
+          value: SPI
+      Base: NavX
+      Name: ahrs
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Send to SmartDashboard, validators: null, value: true}
