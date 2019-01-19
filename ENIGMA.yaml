@@ -144,6 +144,16 @@ Children:
           value: '1'
       Base: Digital Input
       Name: leftLineSensor
+    - Children: []
+      Properties:
+        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id004
+          default: '0'
+          name: Input Channel (Digital)
+          validators: *id005
+          value: '2'
+      Base: Digital Input
+      Name: digitalDistanceSensor
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Send to SmartDashboard, validators: null, value: true}

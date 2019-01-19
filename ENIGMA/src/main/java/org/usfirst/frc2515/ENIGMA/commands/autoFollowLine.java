@@ -43,7 +43,7 @@ public class autoFollowLine extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        if(Robot.isAutoPilotEngaged == true){
+        if(Robot.autoPilotEngaged == true){
 
         }
     }

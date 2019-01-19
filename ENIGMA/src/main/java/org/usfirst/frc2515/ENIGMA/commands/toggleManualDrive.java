@@ -37,10 +37,10 @@ public class toggleManualDrive extends InstantCommand {
     // Called once when this command runs
     @Override
     protected void initialize() {
-        if(Robot.isAutoPilotDisabled){
-            Robot.isAutoPilotDisabled = false;
+        if(Robot.autoPilotEnabled){
+            Robot.autoPilotEnabled = false;
         } else {
-            Robot.isAutoPilotDisabled = true;
+            Robot.autoPilotEnabled = true;
         }
     }
 
