@@ -141,8 +141,8 @@ public class Robot extends TimedRobot {
         accelerateMultiplier = (Robot.oi.driverStick.getRawAxis(3) + 3)*.25;
         SmartDashboard.putNumber("Accelerate Multiplier", accelerateMultiplier);
         SmartDashboard.putNumber("Raw Drag", Robot.oi.driverStick.getRawAxis(3));
-        SmartDashboard.putBoolean("Auto Pilot Disabled", autoPilotEnabled);
         SmartDashboard.putBoolean("Auto Pilot Engaged", autoPilotEngaged);
+        SmartDashboard.putBoolean("Auto Pilot Enabled", autoPilotEnabled);
         SmartDashboard.putBoolean("Cargo Loaded", cargoLoaded);
         SmartDashboard.putBoolean("Panel Loaded", hatchPanelLoaded);
         
