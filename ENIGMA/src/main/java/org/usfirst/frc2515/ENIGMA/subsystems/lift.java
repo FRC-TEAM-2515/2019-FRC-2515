@@ -76,6 +76,18 @@ public class lift extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
+    public void stop(){
+        liftTalon.stopMotor();
+        liftTalonSlave.stopMotor();
+    }
+    public void up(){
+        liftTalon.set(.25);
+        liftTalonSlave.set(.25);
+    }
+    public void down(){
+        liftTalon.set(-.25);
+        liftTalon.set(-.25);
+    }
 
 }
 
