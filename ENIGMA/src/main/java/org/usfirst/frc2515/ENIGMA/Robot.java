@@ -75,7 +75,7 @@ public class Robot extends TimedRobot {
         autoPilotEngaged = false;
         cargoLoaded = false;
         hatchPanelLoaded = false;
-
+        Robot.pnuematics.enableCompressor();
 
         // OI must be constructed after subsystems. If the OI creates Commands
         //(which it very likely will), subsystems are not guaranteed to be
@@ -105,7 +105,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void disabledInit(){
-
+        Robot.pnuematics.dropChassis();
     }
 
     @Override
@@ -118,7 +118,7 @@ public class Robot extends TimedRobot {
         autonomousCommand = chooser.getSelected();
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
-
+        operatorControl();
     }
 
     /**
@@ -144,18 +144,26 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        accelerateMultiplier = (Robot.oi.driverStick.getRawAxis(3) + 3)*.25;
+        operatorControl();
+    }
+
+    public void operatorControl(){
+        accelerateMultiplier = (Robot.oi.driverStick.getRawAxis(3) + 3) * .25;
         SmartDashboard.putNumber("Accelerate Multiplier", accelerateMultiplier);
         SmartDashboard.putNumber("Raw Drag", Robot.oi.driverStick.getRawAxis(3));
         SmartDashboard.putBoolean("Auto Pilot Engaged", autoPilotEngaged);
         SmartDashboard.putBoolean("Auto Pilot Enabled", autoPilotEnabled);
         SmartDashboard.putBoolean("Cargo Loaded", cargoLoaded);
         SmartDashboard.putBoolean("Panel Loaded", hatchPanelLoaded);
-        
-        if(autoPilotEnabled && autoPilotEngaged && !Robot.sensors.isWallDetected()){
+
+        if (autoPilotEnabled && autoPilotEngaged && !Robot.sensors.isWallDetected()) {
             Robot.driveTrain.autoFollowLine();
         } else {
             Robot.driveTrain.operatorDrive();
         }
+    }
+
+    public void test(){
+        
     }
 }

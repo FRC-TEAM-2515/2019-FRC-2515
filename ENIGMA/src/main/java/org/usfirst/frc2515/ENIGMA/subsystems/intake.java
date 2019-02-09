@@ -12,6 +12,7 @@
 package org.usfirst.frc2515.ENIGMA.subsystems;
 
 
+import org.usfirst.frc2515.ENIGMA.Robot;
 import org.usfirst.frc2515.ENIGMA.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -72,5 +73,23 @@ public class intake extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
+    public void start() {
+        intakeTalon.set(.50);
+    }
+    
+    public void stop() {
+        intakeTalon.stopMotor();
+    }
+
+    public void eject() {
+        intakeTalon.set(-1);
+    }
+
+    public boolean isIntakeStopped() {
+        if(intakeTalon.getOutputCurrent()==0){
+            return false;
+        }
+        return true;
+    }
 }
 

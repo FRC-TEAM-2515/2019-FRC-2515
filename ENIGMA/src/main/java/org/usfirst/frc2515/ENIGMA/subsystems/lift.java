@@ -12,6 +12,7 @@
 package org.usfirst.frc2515.ENIGMA.subsystems;
 
 
+import org.usfirst.frc2515.ENIGMA.Robot;
 import org.usfirst.frc2515.ENIGMA.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -81,13 +82,48 @@ public class lift extends Subsystem {
         liftTalonSlave.stopMotor();
     }
     public void up(){
-        liftTalon.set(.25);
-        liftTalonSlave.set(.25);
+        if(!Robot.sensors.isLiftAtTop()){
+            liftTalon.set(.25);
+            liftTalonSlave.set(.25);
+        }
     }
     public void down(){
-        liftTalon.set(-.25);
-        liftTalon.set(-.25);
+        if(!Robot.sensors.isLiftAtBottom()){
+            liftTalon.set(-.25);
+            liftTalon.set(-.25);
+        }
+    }
+    public void moveToBottom(){
+        if (!Robot.sensors.isLiftAtBottom()){
+            while (!Robot.sensors.isLiftAtBottom()){
+                down();
+            }
+        }
     }
 
+    public void moveToTop() {
+        if (!Robot.sensors.isLiftAtTop()) {
+            while (!Robot.sensors.isLiftAtTop()) {
+                up();
+            }
+        }
+    }
+
+    public void moveToMiddle() {
+        if (!Robot.sensors.isLiftAtMiddle()) {
+            switch (Robot.sensors.lastLiftPosition) {
+                case "Top":
+                    while (!Robot.sensors.isLiftAtMiddle()) {
+                        down();
+                    }
+                    break;
+                case "Bottom":
+                    while (!Robot.sensors.isLiftAtMiddle()) {
+                        up();
+                    }
+                    break;
+            }
+        }
+    }
 }
 
