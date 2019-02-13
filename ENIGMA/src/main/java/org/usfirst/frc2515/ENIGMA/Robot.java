@@ -14,6 +14,7 @@ package org.usfirst.frc2515.ENIGMA;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.*;
 import org.usfirst.frc2515.ENIGMA.commands.*;
@@ -119,7 +120,6 @@ public class Robot extends TimedRobot {
         autonomousCommand = chooser.getSelected();
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
-        operatorControl();
     }
 
     /**
@@ -128,6 +128,7 @@ public class Robot extends TimedRobot {
     @Override
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+        operatorControl();
     }
 
     @Override
@@ -166,6 +167,18 @@ public class Robot extends TimedRobot {
     }
 
     public void test(){
-
+        Robot.pnuematics.enableCompressor();
+        Robot.intake.start();
+        Timer.delay(5);
+        Robot.intake.stop();
+        Robot.lift.enable();
+        Robot.lift.setSetpoint(25);
+        Robot.lift.setSetpoint(-25);
+        Robot.lift.disable();
+        Timer.delay(5);
+        Robot.pnuematics.ejectHatchPanel();
+        Robot.pnuematics.elevateChassis();
+        Timer.delay(5);
+        Robot.pnuematics.dropChassis();
     }
 }

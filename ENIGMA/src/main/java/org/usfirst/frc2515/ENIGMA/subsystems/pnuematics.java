@@ -127,6 +127,9 @@ public class pnuematics extends Subsystem {
         }
         return false;
     }
-
+    public void ejectHatchPanel(){
+        panelSolenoid.set(true);
+        panelSolenoid.set(false);
+    }
 }
 

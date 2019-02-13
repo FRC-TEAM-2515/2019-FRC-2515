@@ -41,17 +41,16 @@ public class grabCargo extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        Robot.lift.enable();
-        Robot.lift.setSetpoint(m_setpoint);
+        if(Robot.pnuematics.isArmExtended()){
+            Robot.lift.enable();
+            Robot.lift.setSetpoint(m_setpoint);
+        }
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
         if (Robot.intake.isIntakeStopped() && Robot.pnuematics.isArmExtended()) {
-            Robot.intake.start();
-        } else if (Robot.intake.isIntakeStopped() && !Robot.pnuematics.isArmExtended()){
-            Robot.pnuematics.extendArm();
             Robot.intake.start();
         }
     }
