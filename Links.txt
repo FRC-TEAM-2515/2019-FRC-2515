@@ -30,7 +30,7 @@ Talon SRX Software Documentation
     They will be used in CAN mode with encoders.
     https://phoenix-documentation.readthedocs.io/en/latest/index.html
     WPI API
-    http://www.ctr-electronics.com/downloads/api/wpiapi-java/index.html
+    http://www.ctr-electronics.com/downloads/api/java/html/index.html
 
 FRC Programming Done Right
     Best practices for programming FRC.
