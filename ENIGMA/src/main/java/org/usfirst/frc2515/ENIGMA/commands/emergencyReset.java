@@ -42,8 +42,9 @@ public class emergencyReset extends InstantCommand {
         Robot.driveTrain.stop();
         Robot.elevateDriveTrain.stop();
         Robot.intake.stop();
-        Robot.lift.stop();
+        Robot.lift.setSetpoint(0);
         Robot.pnuematics.dropChassis();
+        Robot.pnuematics.stopCompressor();
     }
 
 }

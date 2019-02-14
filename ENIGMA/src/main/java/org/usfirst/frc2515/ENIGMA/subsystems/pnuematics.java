@@ -12,6 +12,7 @@
 package org.usfirst.frc2515.ENIGMA.subsystems;
 
 
+import org.usfirst.frc2515.ENIGMA.Robot;
 import org.usfirst.frc2515.ENIGMA.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -97,9 +98,13 @@ public class pnuematics extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    public void enableCompressor(){
+    public void startCompressor(){
         compressor1.setClosedLoopControl(true);
         compressor1.enabled();
+        compressor1.start();
+    }
+    public void stopCompressor(){
+        compressor1.stop();
     }
     public void elevateChassis(){
         // extend both elevator cylinders
@@ -121,6 +126,13 @@ public class pnuematics extends Subsystem {
     public void extendArm(){
         armSolenoid.set(true);
     }
+    
+    public void retractArm() {
+        if(!Robot.sensors.isCargoCaptured()){
+            armSolenoid.set(false);
+        }
+    }
+
     public boolean isArmExtended(){
         if(armSolenoid.get()){
             return true;
