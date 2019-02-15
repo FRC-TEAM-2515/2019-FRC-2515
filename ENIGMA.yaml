@@ -75,7 +75,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: [CANID]
-          value: '4'
+          value: '7'
       Base: Victor SPX
       Name: intakeVictor
     Properties:
@@ -105,7 +105,7 @@ Children:
           default: '0'
           name: Input Channel (Digital)
           validators: &id004 [DigitalChannel]
-          value: '0'
+          value: '4'
       Base: Digital Input
       Name: rightLineSensor
     - Children: []
@@ -115,7 +115,7 @@ Children:
           default: '0'
           name: Input Channel (Digital)
           validators: *id004
-          value: '1'
+          value: '5'
       Base: Digital Input
       Name: leftLineSensor
     - Children: []
@@ -159,7 +159,7 @@ Children:
           default: '0'
           name: Input Channel (Digital)
           validators: [DigitalChannel]
-          value: '6'
+          value: '3'
       Base: Limit Switch
       Name: cargoIntake
     Properties:
@@ -310,7 +310,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id002
-          value: '7'
+          value: '3'
       Base: Talon SRX
       Name: elevateDriveTalon
     - Children: []
@@ -320,7 +320,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id002
-          value: '8'
+          value: '4'
       Base: Talon SRX
       Name: elevateDriveTalonSlave
     Properties:
@@ -350,7 +350,7 @@ Children:
           default: '0'
           name: Channel A Channel (Digital)
           validators: [DigitalChannel]
-          value: '3'
+          value: '0'
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Distance Per Pulse, validators: null, value: 1.0}
         PID Source: !!robotbuilder.data.properties.ChoicesProperty
@@ -374,7 +374,7 @@ Children:
           default: '0'
           name: Channel B Channel (Digital)
           validators: [DigitalChannel]
-          value: '4'
+          value: '1'
       Base: Quadrature Encoder
       Name: liftEncoder
     - Children: []
@@ -1254,10 +1254,10 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: None}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id015 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id015
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Instant Command
