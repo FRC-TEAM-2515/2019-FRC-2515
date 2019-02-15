@@ -217,7 +217,7 @@ Children:
           default: '0'
           name: PCM ID
           validators: [PCMCompID]
-          value: '3'
+          value: '10'
       Base: Compressor
       Name: compressor1
     - Children: []
@@ -234,7 +234,7 @@ Children:
           default: '0'
           name: Output PCM (Solenoid)
           validators: &id008 [Solenoid]
-          value: '3'
+          value: '10'
       Base: Solenoid
       Name: armSolenoid
     - Children: []
@@ -244,13 +244,13 @@ Children:
           default: '0'
           name: Output Channel (Solenoid)
           validators: *id006
-          value: '1'
+          value: '7'
         Output PCM (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
           choices: *id007
           default: '0'
           name: Output PCM (Solenoid)
           validators: *id008
-          value: '3'
+          value: '10'
       Base: Solenoid
       Name: panelSolenoid
     - Children: []
@@ -266,7 +266,7 @@ Children:
           default: '0'
           name: Output PCM (Solenoid)
           validators: *id008
-          value: '3'
+          value: '10'
       Base: Solenoid
       Name: elevateSolenoidFront
     - Children: []
@@ -276,13 +276,13 @@ Children:
           default: '0'
           name: Output Channel (Solenoid)
           validators: *id006
-          value: '4'
+          value: '1'
         Output PCM (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
           choices: *id007
           default: '0'
           name: Output PCM (Solenoid)
           validators: *id008
-          value: '3'
+          value: '10'
       Base: Solenoid
       Name: elevateSolenoidRear
     Properties:
@@ -1283,9 +1283,9 @@ Properties:
     name: Export Subsystems, validators: null, value: true}
   Simulation World File: !!robotbuilder.data.properties.StringProperty {default: /usr/share/frcsim/worlds/GearsBotDemo.world,
     name: Simulation World File, validators: null, value: /usr/share/frcsim/worlds/GearsBotDemo.world}
-  Wiring file location: !!robotbuilder.data.properties.FileProperty {default: /Users/ae9685cp/,
+  Wiring file location: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\frc2515\',
     extension: null, folder: true, name: Wiring file location, validators: null, value: ./}
-  Export Directory: !!robotbuilder.data.properties.FileProperty {default: /Users/ae9685cp/FRCProjects,
+  Export Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\frc2515\FRCProjects',
     extension: null, folder: true, name: Export Directory, validators: null, value: ./}
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
     name: Autonomous Command, type: Command, validators: null, value: Autonomous Command}
