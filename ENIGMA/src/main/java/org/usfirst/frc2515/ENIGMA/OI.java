@@ -98,9 +98,9 @@ public class OI {
         resetLiftEncoderButton = new JoystickButton(driverStick, 6);
         resetLiftEncoderButton.whenPressed(new resetLiftEncoder());
         liftDownButton = new JoystickButton(driverStick, 4);
-        liftDownButton.whileHeld(new liftManual(-25));
+        liftDownButton.whileHeld(new liftManual(-1));
         liftUpButton = new JoystickButton(driverStick, 3);
-        liftUpButton.whileHeld(new liftManual(25));
+        liftUpButton.whileHeld(new liftManual(1));
         buttonToggleManualDrive = new JoystickButton(driverStick, 5);
         buttonToggleManualDrive.whenPressed(new toggleManualDrive());
 
@@ -122,8 +122,8 @@ public class OI {
         SmartDashboard.putData("liftAuto: cargoLevel1", new liftAuto(0));
         SmartDashboard.putData("liftAuto: hatchLevel1", new liftAuto(0));
         SmartDashboard.putData("liftAuto: bottom", new liftAuto(0));
-        SmartDashboard.putData("liftManual: up", new liftManual(25));
-        SmartDashboard.putData("liftManual: down", new liftManual(-25));
+        SmartDashboard.putData("liftManual: up", new liftManual(5));
+        SmartDashboard.putData("liftManual: down", new liftManual(-5));
         SmartDashboard.putData("resetLiftEncoder", new resetLiftEncoder());
         SmartDashboard.putData("toggleArmExtension", new toggleArmExtension());
 

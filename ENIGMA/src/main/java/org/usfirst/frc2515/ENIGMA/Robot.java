@@ -77,7 +77,7 @@ public class Robot extends TimedRobot {
         cargoLoaded = false;
         hatchPanelLoaded = false;
         Robot.pnuematics.startCompressor();
-
+        Robot.lift.resetEncoder();
         // OI must be constructed after subsystems. If the OI creates Commands
         //(which it very likely will), subsystems are not guaranteed to be
         // constructed yet. Thus, their requires() statements may grab null
@@ -127,6 +127,8 @@ public class Robot extends TimedRobot {
         autonomousCommand = chooser.getSelected();
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
+        Robot.pnuematics.startCompressor();
+        Robot.lift.resetEncoder();
     }
 
     /**
@@ -145,6 +147,8 @@ public class Robot extends TimedRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
+        Robot.pnuematics.startCompressor();
+        Robot.lift.resetEncoder();
     }
 
     /**

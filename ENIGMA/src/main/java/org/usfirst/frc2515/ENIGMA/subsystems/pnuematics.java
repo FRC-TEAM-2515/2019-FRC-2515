@@ -50,7 +50,7 @@ public class pnuematics extends Subsystem {
         addChild("compressor1",compressor1);
         
         
-        armSolenoid = new Solenoid(10, 0);
+        armSolenoid = new Solenoid(10, 3);
         addChild("armSolenoid",armSolenoid);
         
         
@@ -99,8 +99,8 @@ public class pnuematics extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     public void startCompressor(){
-        compressor1.setClosedLoopControl(true);
         compressor1.enabled();
+        compressor1.setClosedLoopControl(true);
         compressor1.start();
     }
     public void stopCompressor(){
