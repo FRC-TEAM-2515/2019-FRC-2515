@@ -99,7 +99,7 @@ public class Robot extends TimedRobot {
         SmartDashboard.putBoolean("Cargo Loaded", Robot.sensors.isCargoCaptured());
         SmartDashboard.putBoolean("Panel Loaded", hatchPanelLoaded);
         //CameraServer.getInstance().startAutomaticCapture();
-        SmartDashboard.putNumber("Lift Position", Robot.lift.getPIDDisplacement());
+        SmartDashboard.putNumber("Lift Position", Robot.lift.getPosition());
 
     }
 
