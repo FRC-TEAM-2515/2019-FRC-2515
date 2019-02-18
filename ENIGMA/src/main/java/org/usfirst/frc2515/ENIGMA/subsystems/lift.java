@@ -137,7 +137,5 @@ public class lift extends PIDSubsystem {
     public void resetEncoder(){
         liftEncoder.reset();
     }
-    public double getPIDDisplacement() {
-        return liftEncoder.pidGet();
-    }
+
 }
