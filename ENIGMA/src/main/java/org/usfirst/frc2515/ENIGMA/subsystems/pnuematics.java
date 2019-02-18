@@ -98,6 +98,12 @@ public class pnuematics extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
+    public void initSolenoids() {
+        elevateSolenoidFront.set(false);
+        elevateSolenoidRear.set(false);
+        armSolenoid.set(false);
+        panelSolenoid.set(false);
+    }
     public void startCompressor(){
         compressor1.enabled();
         compressor1.setClosedLoopControl(true);
@@ -141,6 +147,8 @@ public class pnuematics extends Subsystem {
     }
     public void ejectHatchPanel(){
         panelSolenoid.set(true);
+    }
+    public void resetHatchPanel(){
         panelSolenoid.set(false);
     }
 }

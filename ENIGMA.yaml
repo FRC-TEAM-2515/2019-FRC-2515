@@ -125,7 +125,7 @@ Children:
           default: '0'
           name: Input Channel (Digital)
           validators: *id004
-          value: '2'
+          value: '3'
       Base: Digital Input
       Name: digitalDistanceSensor
     - Children: []
@@ -159,7 +159,7 @@ Children:
           default: '0'
           name: Input Channel (Digital)
           validators: [DigitalChannel]
-          value: '3'
+          value: '2'
       Base: Limit Switch
       Name: cargoIntake
     Properties:
@@ -352,13 +352,13 @@ Children:
           validators: [DigitalChannel]
           value: '0'
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
-          name: Distance Per Pulse, validators: null, value: 0.00166667}
+          name: Distance Per Pulse, validators: null, value: 0.0016666666666667}
         PID Source: !!robotbuilder.data.properties.ChoicesProperty
           choices: [kDisplacement, kRate]
           default: kRate
           name: PID Source
           validators: null
-          value: kRate
+          value: kDisplacement
         Encoding Type: !!robotbuilder.data.properties.ChoicesProperty
           choices: [k4X, k2X, k1X]
           default: k4X
@@ -412,7 +412,7 @@ Children:
       F: !!robotbuilder.data.properties.DoubleProperty {default: 0, name: F, validators: null,
         value: 0.0}
       Tolerance: !!robotbuilder.data.properties.DoubleProperty {default: 0.2, name: Tolerance,
-        validators: null, value: 2.0}
+        validators: null, value: 0.02}
       Constants: !!robotbuilder.data.properties.ConstantsProperty
         default: []
         name: Constants
@@ -425,7 +425,7 @@ Children:
       Limit Input: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Limit Input, validators: null, value: false}
       Minimum Output: !!robotbuilder.data.properties.DoubleProperty {default: -1,
-        name: Minimum Output, validators: null, value: -0.25}
+        name: Minimum Output, validators: null, value: -0.5}
       P: !!robotbuilder.data.properties.DoubleProperty {default: 1, name: P, validators: null,
         value: 1.0}
       Input: !!robotbuilder.data.properties.ChildSelectionProperty
@@ -435,9 +435,9 @@ Children:
         validators: [ChildDropdownSelected]
         value: liftEncoder
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
-        name: Send to SmartDashboard, validators: null, value: false}
+        name: Send to SmartDashboard, validators: null, value: true}
       Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1, name: Maximum Output,
-        validators: null, value: 0.25}
+        validators: null, value: 0.5}
       Output: !!robotbuilder.data.properties.ChildSelectionProperty
         default: 0
         name: Output

@@ -46,12 +46,15 @@ public class liftManual extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.lift.setSetpoint(m_setpoint_relative);
+        Robot.lift.setSetpointRelative(m_setpoint_relative);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
+        if(!Robot.oi.driverStick.getRawButton(3) && !Robot.oi.driverStick.getRawButton(3)){
+            return true;
+        }
         return Robot.lift.onTarget();
     }
 

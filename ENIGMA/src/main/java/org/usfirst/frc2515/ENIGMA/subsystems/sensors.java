@@ -69,7 +69,7 @@ public class sensors extends Subsystem {
         addChild("leftLineSensor",leftLineSensor);
         
         
-        digitalDistanceSensor = new DigitalInput(2);
+        digitalDistanceSensor = new DigitalInput(3);
         addChild("digitalDistanceSensor",digitalDistanceSensor);
         
         
@@ -81,7 +81,7 @@ public class sensors extends Subsystem {
         addChild(ahrs);
         
         
-        cargoIntake = new DigitalInput(3);
+        cargoIntake = new DigitalInput(2);
         addChild("cargoIntake",cargoIntake);
         
         

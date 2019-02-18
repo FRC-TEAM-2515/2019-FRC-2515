@@ -104,11 +104,11 @@ public class driveTrain extends Subsystem {
     public void operatorDrive(){
         double forward = -1 * Robot.oi.driverStick.getRawAxis(1); /* positive is forward */
         double turn = +1 * Robot.oi.driverStick.getRawAxis(2); /* positive is right */
-        /* deadband gamepad 10% */
-        if (Math.abs(forward) < 0.10) {
+        /* deadband gamepad 15% */
+        if (Math.abs(forward) < 0.15) {
             forward = 0;
         }
-        if (Math.abs(turn) < 0.10) {
+        if (Math.abs(turn) < 0.15) {
             turn = 0;
         }
         SmartDashboard.putNumber("Left Drive Encoder", leftDriveTalon.getSelectedSensorPosition());
@@ -121,7 +121,9 @@ public class driveTrain extends Subsystem {
     }
 
     public void autoFollowLine(){
-        diffDrive.arcadeDrive(.5, Robot.sensors.traceLine());
+        if (!Robot.sensors.isWallDetected()){
+            diffDrive.arcadeDrive(.5, Robot.sensors.traceLine());
+        }
     }
     
     public void stop(){
