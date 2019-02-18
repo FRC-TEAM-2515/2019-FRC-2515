@@ -121,14 +121,21 @@ public class driveTrain extends Subsystem {
     }
 
     public void autoFollowLine(){
-        if (!Robot.sensors.isWallDetected()){
-            diffDrive.arcadeDrive(.5, Robot.sensors.traceLine());
+        double forward = -1 * Robot.oi.driverStick.getRawAxis(1); /* positive is forward */
+        /* deadband gamepad 10% */
+        if (Math.abs(forward) < 0.15) {
+            forward = 0;
+        }
+        if(!Robot.sensors.isWallDetected()){
+            diffDrive.arcadeDrive(forward * Robot.accelerateMultiplier, Robot.sensors.traceLine());
+            // diffDrive.arcadeDrive(.5, Robot.sensors.traceLine());
         }
     }
     
     public void stop(){
         diffDrive.stopMotor();
     }
+
 
 }
 
