@@ -79,9 +79,10 @@ public class lift extends PIDSubsystem {
         liftTalon.configFactoryDefault();
         liftTalonSlave.configFactoryDefault();
         liftTalon.setNeutralMode(NeutralMode.Brake);
-        liftTalonSlave.setNeutralMode(NeutralMode.Brake);
-        liftTalonSlave.setInverted(InvertType.FollowMaster);
+        liftTalonSlave.setNeutralMode(NeutralMode.Coast);
         liftTalonSlave.follow(liftTalon);
+        liftTalon.setInverted(false);
+        liftTalonSlave.setInverted(InvertType.FollowMaster);
         liftTalon.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder,0,0);
         
         // Use these to get going:
@@ -131,9 +132,6 @@ public class lift extends PIDSubsystem {
 
     public void stop(){
         liftTalon.pidWrite(0);
-        liftTalonSlave.pidWrite(0);
-        liftTalon.stopMotor();
-        liftTalonSlave.stopMotor();
     }
     public void resetEncoder(){
         liftEncoder.reset();
