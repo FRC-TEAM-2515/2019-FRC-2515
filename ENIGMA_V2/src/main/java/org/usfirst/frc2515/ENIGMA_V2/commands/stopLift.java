@@ -39,7 +39,6 @@ public class stopLift extends InstantCommand {
     @Override
     protected void initialize() {
         Robot.lift.setSetpointRelative(0);
-        Robot.lift.stop();
     }
 
 }
