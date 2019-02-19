@@ -40,7 +40,7 @@ public class releaseHatchPanel extends Command {
     protected void initialize() {
         setTimeout(3);
         Robot.lift.enable();
-        Robot.lift.setSetpointRelative(-1);
+        Robot.lift.setSetpointRelative(-0.3);
     }
 
     // Called repeatedly when this Command is scheduled to run

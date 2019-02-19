@@ -40,7 +40,7 @@ public class grabHatchPanel extends Command {
     protected void initialize() {
         setTimeout(3);
         Robot.lift.enable();
-        Robot.lift.setSetpoint(5);
+        Robot.lift.setSetpointRelative(0.3);
     }
 
     // Called repeatedly when this Command is scheduled to run

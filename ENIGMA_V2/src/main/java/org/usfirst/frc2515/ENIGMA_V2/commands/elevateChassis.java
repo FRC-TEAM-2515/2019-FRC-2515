@@ -37,6 +37,7 @@ public class elevateChassis extends InstantCommand {
     // Called once when this command runs
     @Override
     protected void initialize() {
+        Robot.pnuematics.liftChassis();
     }
 
 }
