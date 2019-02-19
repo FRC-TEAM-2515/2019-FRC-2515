@@ -73,7 +73,7 @@ public class OI {
         
         releaseHatchPanelButton = new JoystickButton(driverStick, 2);
         releaseHatchPanelButton.whenPressed(new releaseHatchPanel());
-        moveLiftToLevel2 = new JoystickButton(driverStick, 1);
+        moveLiftToLevel2 = new JoystickButton(driverStick,8);
         moveLiftToLevel2.whenPressed(new liftAuto(10));
         grabHatchPanelButton = new JoystickButton(driverStick, 1);
         grabHatchPanelButton.whenPressed(new grabHatchPanel());
@@ -81,7 +81,7 @@ public class OI {
         stopLiftButton.whenPressed(new stopLift());
         moveLiftToLevel1 = new JoystickButton(driverStick, 10);
         moveLiftToLevel1.whenPressed(new liftAuto(5));
-        moveLiftToBottom = new JoystickButton(driverStick, 8);
+        moveLiftToBottom = new JoystickButton(driverStick, 12);
         moveLiftToBottom.whenPressed(new liftAuto(0));
         resetLiftEncoderButton = new JoystickButton(driverStick, 6);
         resetLiftEncoderButton.whenPressed(new resetLiftEncoder());

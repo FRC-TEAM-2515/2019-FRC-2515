@@ -10,31 +10,7 @@
         "hgap": 16.0,
         "vgap": 16.0,
         "tiles": {
-          "1,0": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Boolean Box",
-              "_source0": "network_table:///SmartDashboard/Auto Pilot Engaged",
-              "_title": "Auto Engaged",
-              "Colors/Color when true": "#7CFC00FF",
-              "Colors/Color when false": "#8B0000FF"
-            }
-          },
-          "8,2": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/grabCargo",
-              "_title": "grabCargo"
-            }
-          },
-          "7,1": {
+          "6,0": {
             "size": [
               1,
               1
@@ -56,40 +32,7 @@
               "_title": "emergencyReset"
             }
           },
-          "6,0": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/releaseCargo",
-              "_title": "releaseCargo"
-            }
-          },
-          "4,3": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/Right Drive Encoder",
-              "_title": "Right Drive Encoder"
-            }
-          },
-          "5,3": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/Left Drive Encoder",
-              "_title": "Left Drive Encoder"
-            }
-          },
-          "5,0": {
+          "6,1": {
             "size": [
               1,
               1
@@ -102,8 +45,8 @@
           },
           "2,0": {
             "size": [
-              3,
-              3
+              4,
+              4
             ],
             "content": {
               "_type": "Camera Stream",
@@ -113,7 +56,7 @@
               "Crosshair/Crosshair color": "#FFFFFFFF",
               "Controls/Show controls": true,
               "Controls/Rotation": "NONE",
-              "compression": 50.0,
+              "compression": 23.0,
               "fps": 30,
               "imageWidth": 320,
               "imageHeight": 240
@@ -130,7 +73,7 @@
               "_title": "Accelerate Multiplier"
             }
           },
-          "1,1": {
+          "0,2": {
             "size": [
               1,
               1
@@ -143,7 +86,7 @@
               "Colors/Color when false": "#8B0000FF"
             }
           },
-          "6,3": {
+          "1,2": {
             "size": [
               1,
               1
@@ -154,29 +97,7 @@
               "_title": "Line Timer"
             }
           },
-          "5,1": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/retractRearElevator",
-              "_title": "retractRearElevator"
-            }
-          },
-          "7,2": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/elevateChassis",
-              "_title": "elevateChassis"
-            }
-          },
-          "8,1": {
+          "8,0": {
             "size": [
               1,
               1
@@ -187,18 +108,7 @@
               "_title": "liftAuto: bottom"
             }
           },
-          "2,3": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/Distance (volts)",
-              "_title": "Distance (volts)"
-            }
-          },
-          "0,2": {
+          "1,0": {
             "size": [
               1,
               1
@@ -209,7 +119,7 @@
               "_title": "toggleManualDrive"
             }
           },
-          "7,0": {
+          "8,2": {
             "size": [
               1,
               1
@@ -220,42 +130,7 @@
               "_title": "liftAuto: hatchLevel2"
             }
           },
-          "8,0": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/retractFrontElevator",
-              "_title": "retractFrontElevator"
-            }
-          },
-          "8,3": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/liftAuto: cargoLevel2",
-              "_title": "liftAuto: cargoLevel2"
-            }
-          },
-          "0,1": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Boolean Box",
-              "_source0": "network_table:///SmartDashboard/Cargo Loaded",
-              "_title": "Cargo Loaded",
-              "Colors/Color when true": "#7CFC00FF",
-              "Colors/Color when false": "#8B0000FF"
-            }
-          },
-          "6,1": {
+          "7,0": {
             "size": [
               1,
               1
@@ -266,7 +141,7 @@
               "_title": "liftManual: down"
             }
           },
-          "1,2": {
+          "1,1": {
             "size": [
               1,
               1
@@ -279,15 +154,26 @@
               "Colors/Color when false": "#8B0000FF"
             }
           },
-          "7,3": {
+          "8,1": {
             "size": [
               1,
               1
             ],
             "content": {
               "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/liftAuto: cargoLevel1",
-              "_title": "liftAuto: cargoLevel1"
+              "_source0": "network_table:///SmartDashboard/liftAuto: hatchLevel1",
+              "_title": "liftAuto: hatchLevel1"
+            }
+          },
+          "8,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Command",
+              "_source0": "network_table:///SmartDashboard/resetLiftEncoder",
+              "_title": "resetLiftEncoder"
             }
           },
           "0,0": {
@@ -297,21 +183,67 @@
             ],
             "content": {
               "_type": "Boolean Box",
-              "_source0": "network_table:///SmartDashboard/Auto Pilot Enabled",
-              "_title": "Auto Pilot Enabled",
+              "_source0": "network_table:///SmartDashboard/Steer Enabled",
+              "_title": "/SmartDashboard/Steer Enabled",
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
           },
-          "5,2": {
+          "0,1": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///SmartDashboard/Steer Engaged",
+              "_title": "/SmartDashboard/Steer Engaged",
+              "Colors/Color when true": "#7CFC00FF",
+              "Colors/Color when false": "#8B0000FF"
+            }
+          },
+          "7,2": {
             "size": [
               1,
               1
             ],
             "content": {
               "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/PID Get",
-              "_title": "SmartDashboard/PID Get"
+              "_source0": "network_table:///SmartDashboard/Lift Position",
+              "_title": "/SmartDashboard/Lift Position"
+            }
+          },
+          "7,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Lift Setpoint",
+              "_title": "/SmartDashboard/Lift Setpoint"
+            }
+          },
+          "6,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Auto mode/selected",
+              "_title": "Auto mode/selected"
+            }
+          },
+          "6,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Auto Selector",
+              "_title": "Auto Selector"
             }
           }
         }

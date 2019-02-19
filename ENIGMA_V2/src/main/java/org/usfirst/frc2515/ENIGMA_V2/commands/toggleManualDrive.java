@@ -39,8 +39,9 @@ public class toggleManualDrive extends InstantCommand {
     protected void initialize() {
         if(!Robot.autoSteerEnabled){
             Robot.autoSteerEnabled = true;
+        } else {
+            Robot.autoSteerEnabled = false;
         }
-        Robot.autoSteerEnabled = false;
     }
 
 }
