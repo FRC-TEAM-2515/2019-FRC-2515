@@ -142,6 +142,7 @@ public class Robot extends TimedRobot {
         SmartDashboard.putBoolean("Steer Engaged", autoSteerEngaged);
         SmartDashboard.putBoolean("Line Detected", Robot.sensors.isLineDetected());
         SmartDashboard.putBoolean("Wall Detected", Robot.sensors.isWallDetected());
+        SmartDashboard.putBoolean("Hatch Loaded", Robot.sensors.isHatchPanelLoaded());
         SmartDashboard.putNumber("Lift Position", Robot.lift.getPosition());
         SmartDashboard.putNumber("Lift Setpoint", Robot.lift.getSetpoint());
         SmartDashboard.putBoolean("Arm Extended", Robot.pnuematics.getArmPosition());
