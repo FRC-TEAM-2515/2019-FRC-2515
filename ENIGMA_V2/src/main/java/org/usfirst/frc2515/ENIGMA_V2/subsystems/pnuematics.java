@@ -123,7 +123,7 @@ public class pnuematics extends Subsystem {
         elevatorRearSolenoid.set(false);
     }
     public boolean isChassisElevated(){
-        if(elevatorFrontSolenoid.get() && elevatorRearSolenoid.get()){
+        if(elevatorFrontSolenoid.get() || elevatorRearSolenoid.get()){
             return true;
         }
         return false;

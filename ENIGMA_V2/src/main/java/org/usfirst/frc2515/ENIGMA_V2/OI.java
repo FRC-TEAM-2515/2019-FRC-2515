@@ -95,15 +95,15 @@ public class OI {
         stopLiftButton = new JoystickButton(driverStick, 11);
         stopLiftButton.whenPressed(new stopLift());
         moveLiftToLevel1 = new JoystickButton(driverStick, 10);
-        moveLiftToLevel1.whenPressed(new liftAuto(.6));
+        moveLiftToLevel1.whenPressed(new liftAuto(1.75));
         moveLiftToBottom = new JoystickButton(driverStick, 12);
         moveLiftToBottom.whenPressed(new liftAuto(0));
         resetLiftEncoderButton = new JoystickButton(driverStick, 6);
         resetLiftEncoderButton.whenPressed(new resetLiftEncoder());
         moveLiftDown = new JoystickButton(driverStick, 4);
-        moveLiftDown.whileHeld(new liftManual(-.25));
+        moveLiftDown.whileHeld(new liftManual(-.5));
         moveLiftUp = new JoystickButton(driverStick, 3);
-        moveLiftUp.whileHeld(new liftManual(.25));
+        moveLiftUp.whileHeld(new liftManual(.75));
         toggleManualDriveButton = new JoystickButton(driverStick, 5);
         toggleManualDriveButton.whenPressed(new toggleManualDrive());
 
