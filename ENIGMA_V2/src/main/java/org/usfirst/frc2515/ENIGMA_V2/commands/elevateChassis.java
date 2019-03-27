@@ -37,7 +37,9 @@ public class elevateChassis extends InstantCommand {
     // Called once when this command runs
     @Override
     protected void initialize() {
-        Robot.pnuematics.liftChassis();
+        if(Robot.sensors.getAirPressure() > 4.5){
+            Robot.pnuematics.liftChassis();
+        }
     }
 
 }

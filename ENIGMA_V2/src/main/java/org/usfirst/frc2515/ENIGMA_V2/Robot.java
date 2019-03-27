@@ -146,5 +146,7 @@ public class Robot extends TimedRobot {
         SmartDashboard.putNumber("Lift Position", Robot.lift.getPosition());
         SmartDashboard.putNumber("Lift Setpoint", Robot.lift.getSetpoint());
         SmartDashboard.putBoolean("Arm Extended", Robot.pnuematics.getArmPosition());
+        SmartDashboard.putNumber("Air Pressure", Robot.sensors.getAirPressure());
+
     }
 }
